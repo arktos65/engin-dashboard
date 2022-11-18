@@ -31,6 +31,23 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # RSpec software testing framework
+  gem 'rspec-rails', '~>5.1.2'
+  # Code quality check using a linter
+  gem 'rubocop', '~>1.31'
+  gem 'rubocop-rails', '~>2.15.1'
+  gem 'rubocop-rspec', '~>2.11.1'
+  gem 'rubocop-faker', '~> 1.1'
+  # Keeping database clean for testing purposes
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
+  # Data generators to be used in testing
+  gem 'factory_bot_rails', '~> 6.2'
+  # Library for generating fake data
+  gem 'faker', '~> 2.21'
+  # Simplifies matching tests in RSpec
+  gem 'shoulda-matchers', '~> 5.1'
+  # Database seeding tool
+  gem 'yaml_db', '~> 0.7.0'
 end
 
 group :development do
