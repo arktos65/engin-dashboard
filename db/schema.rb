@@ -10,13 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_06_184107) do
+ActiveRecord::Schema.define(version: 2023_01_06_202746) do
 
   create_table "departments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "division"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "members", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.bigint "role_id", null: false
+    t.bigint "department_id", null: false
+    t.bigint "source_id", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "is_active"
+    t.boolean "is_contractor"
+    t.string "jira_account_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["department_id"], name: "index_members_on_department_id"
+    t.index ["jira_account_id"], name: "index_members_on_jira_account_id", unique: true
+    t.index ["role_id"], name: "index_members_on_role_id"
+    t.index ["source_id"], name: "index_members_on_source_id"
   end
 
   create_table "roles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -40,4 +59,7 @@ ActiveRecord::Schema.define(version: 2023_01_06_184107) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "members", "departments"
+  add_foreign_key "members", "roles"
+  add_foreign_key "members", "sources"
 end
