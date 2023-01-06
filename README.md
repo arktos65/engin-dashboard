@@ -30,13 +30,13 @@ separated to reduce the likelihood of Ruby gem version conflicts between your pr
 snippet can be used to create your environment:
 
     $ rvm use 2.7.2
-    $ rvm gemset create engin-dash
-    $ rvm use 2.7.2@engin-dash
+    $ rvm gemset create engin-dashboard
+    $ rvm use 2.7.2@engin-dashboard
     $ gem install bundler
 
 You can set your gemset to be the default by using the command:
 
-    $ rvm use 2.7.2@engin-dash --default
+    $ rvm use 2.7.2@engin-dashboard --default
 
 ### Setting Up Development Project
 
