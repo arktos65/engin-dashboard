@@ -34,5 +34,10 @@ module EnginDashboard
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Load EngIn application configuration
+    config.engin = config_for(:engin)
+    # Load Jira module configuration
+    config.jira = config_for(:jira)
   end
 end

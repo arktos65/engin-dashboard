@@ -1,0 +1,37 @@
+# Configuration settings for JiraServer module.  As a best practice, use environment variables, which should be set
+# within the application container.  Do not store these settings in your code repository.
+#
+# We will be using the Basic auth method with a valid Jira user and the password will be substituted with
+# the value in api_key.
+default: &default
+  site: <%= ENV.fetch("JIRA_SITE") %>
+  context: <%= ENV.fetch("JIRA_CONTEXT") %>
+  user: <%= ENV.fetch("JIRA_USER") %>
+  api_key: <%= ENV.fetch("JIRA_API_KEY") %>
+  timeout: 120
+  # Recognized values for these Jira fields
+  issue_types: [ "Story", "Bug", "Research", "Chore", "Epic" ]
+  statuses: [ "Created", "Open", "Won't Do", "Triage", "Refined", "Ready to Estimate", "In Progress",
+              "Closed", "Release Engineering" ]
+  # Values used for various filters and groupings
+  story_types: [ "Story" ]
+  bug_types: [ "Bug" ]
+  task_types: [ "Research", "Chore" ]
+  open_status: [ "Created", "Open", "Triage", "Refined", "Ready to Estimate", "In Progress", "Release Engineering" ]
+  closed_status: [ "Closed" ]
+  dropped_status: [ "Won't Do" ]
+  capex_types: [ "Story" ]
+  opex_types: [ "Bug", "Research", "Chore" ]
+  # Jira API Settings
+  max_results: 50
+  fields:
+    story_points: "customfield_10103"
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
