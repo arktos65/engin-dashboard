@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_06_224257) do
+ActiveRecord::Schema.define(version: 2023_01_10_201531) do
 
   create_table "currencies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -83,6 +83,15 @@ ActiveRecord::Schema.define(version: 2023_01_06_224257) do
     t.string "contact_phone"
     t.string "contact_email"
     t.boolean "is_internal"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "streams", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "business_unit"
+    t.string "stakeholder_name"
+    t.string "stakeholder_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
