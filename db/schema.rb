@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_06_205412) do
+ActiveRecord::Schema.define(version: 2023_01_06_224257) do
 
   create_table "currencies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -47,6 +47,25 @@ ActiveRecord::Schema.define(version: 2023_01_06_205412) do
     t.index ["source_id"], name: "index_members_on_source_id"
   end
 
+  create_table "resource_rates", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "member_id", null: false
+    t.bigint "currency_id", null: false
+    t.date "period_start"
+    t.date "period_end"
+    t.integer "classification", default: 0
+    t.integer "rate_type", default: 0
+    t.decimal "base_rate", precision: 10, default: "0"
+    t.decimal "weekly_rate", precision: 10, default: "0"
+    t.decimal "monthly_rate", precision: 10, default: "0"
+    t.decimal "annual_rate", precision: 10, default: "0"
+    t.integer "fiscal_year"
+    t.text "comments"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["currency_id"], name: "index_resource_rates_on_currency_id"
+    t.index ["member_id"], name: "index_resource_rates_on_member_id"
+  end
+
   create_table "roles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.boolean "is_shared"
@@ -71,4 +90,6 @@ ActiveRecord::Schema.define(version: 2023_01_06_205412) do
   add_foreign_key "members", "departments"
   add_foreign_key "members", "roles"
   add_foreign_key "members", "sources"
+  add_foreign_key "resource_rates", "currencies"
+  add_foreign_key "resource_rates", "members"
 end
