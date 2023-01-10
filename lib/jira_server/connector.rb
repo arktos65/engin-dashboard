@@ -22,5 +22,12 @@ module JiraServer
       puts "DEBUG: options => #{connector}" if Rails.configuration.engin['http_debug']
       return connector
     end
+
+    # This method tests the JiraServer::Connector to ensure your setup is configured
+    # properly and is operational.
+    def self.test_connector
+      puts "#{Time.now.strftime('%F - %H:%M:%S.%L')}:   Connecting to Jira instance"
+      client = JIRA::Client.new(Connector.get_options)
+    end
   end
 end
