@@ -14,8 +14,17 @@ class ResourceRate < ApplicationRecord
   validates :annual_rate, numericality: { greater_than_or_equal_to: 0 }
 
   # Enumerators
-  enum classification:  [:employee, :contractor, :agency]
-  enum rate_type: [:hourly, :weekly, :monthly, :annual]
+  enum classification:  {
+    employee: 0,
+    contractor: 1,
+    agency: 2
+  }
+  enum rate_type: {
+    hourly: 0,
+    weekly: 1,
+    monthly: 2,
+    annual: 3
+  }
 
   # Callback to calculate rates from the base rate and rate type before
   # saving the record.

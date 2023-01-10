@@ -52,12 +52,12 @@ ActiveRecord::Schema.define(version: 2023_01_06_224257) do
     t.bigint "currency_id", null: false
     t.date "period_start"
     t.date "period_end"
-    t.integer "classification"
-    t.integer "rate_type"
-    t.decimal "base_rate", precision: 10
-    t.decimal "weekly_rate", precision: 10
-    t.decimal "monthly_rate", precision: 10
-    t.decimal "annual_rate", precision: 10
+    t.integer "classification", default: 0
+    t.integer "rate_type", default: 0
+    t.decimal "base_rate", precision: 10, default: "0"
+    t.decimal "weekly_rate", precision: 10, default: "0"
+    t.decimal "monthly_rate", precision: 10, default: "0"
+    t.decimal "annual_rate", precision: 10, default: "0"
     t.integer "fiscal_year"
     t.text "comments"
     t.datetime "created_at", precision: 6, null: false
