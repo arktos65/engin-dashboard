@@ -1,0 +1,17 @@
+# This file contains the general configuration information for the
+# EngIn application.
+default: &default
+  http_debug: false
+  redis_server: <%= ENV.fetch("ENGIN_REDIS_SERVER") { 'localhost' } %>
+  redis_port: <%= ENV.fetch("ENGIN_REDIS_PORT") { 6379 } %>
+
+development:
+  <<: *default
+  http_debug: true
+
+test:
+  <<: *default
+  http_debug: true
+
+production:
+  <<: *default

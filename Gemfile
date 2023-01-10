@@ -18,7 +18,9 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Responsive framework for entity views
-gem 'trestle', '~> 0.9.7'
+gem 'trestle', '~> 0.9'
+# Jira API library
+gem 'jira-ruby', :require => 'jira-ruby'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
