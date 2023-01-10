@@ -5,4 +5,9 @@ class Member < ApplicationRecord
   belongs_to :source
 
   has_many :resource_rates
+
+  # Returns name in 'last, first' format
+  def full_name
+    last_name + ", " + first_name
+  end
 end
