@@ -4,7 +4,7 @@ This document provides an overview of the EngIn Dashboard application for managi
 on product development costs by value stream.  You will also find instructions for setting up
 development and test environments.
 
-**Requirements:** Ruby ~> v2.7.2, Rails ~> v6.1.7, MySQL Server ~> 8.0, Docker Desktop, Redis
+**Requirements:** Ruby ~> v2.7.4, Rails ~> v6.1.7, MySQL Server ~> 8.0, Docker Desktop, Redis
 
 ## Development Prerequisites
 
@@ -23,20 +23,20 @@ EngIn app project:
 These instructions assume you have installed the Ruby Version Manager on your workstation.  To install
 Ruby:
 
-    $ rvm install 2.7.2
+    $ rvm install 2.7.4
 
 RVM will install the Ruby interpreter.  It's good practice to use gemsets to keep various projects
 separated to reduce the likelihood of Ruby gem version conflicts between your projects.  The following
 snippet can be used to create your environment:
 
-    $ rvm use 2.7.2
+    $ rvm use 2.7.4
     $ rvm gemset create engin-dashboard
-    $ rvm use 2.7.2@engin-dashboard
+    $ rvm use 2.7.4@engin-dashboard
     $ gem install bundler
 
 You can set your gemset to be the default by using the command:
 
-    $ rvm use 2.7.2@engin-dashboard --default
+    $ rvm use 2.7.4@engin-dashboard --default
 
 ### Setting Up Development Project
 
@@ -82,7 +82,7 @@ is setup correctly for your MySQL installation.
 
 In a termainal window, from the root source code directory:
 
-    $ rvm use 2.7.2@engin-dashboard
+    $ rvm use 2.7.@engin-dashboard
     $ rails db:create db:migrate
     $ rails db:seed
 
