@@ -9,11 +9,11 @@ namespace :loader do
     JiraServer::Projects.update_all
   end
 
-  # task jira_issues: :environment do
-  #   puts 'DEBUG: executing loader:jira_issues task' if Rails.configuration.engin['http_debug']
-  #   JiraServer::Issues.update_all
-  # end
-  #
+  task jira_issues: :environment do
+    puts 'DEBUG: executing loader:jira_issues task' if Rails.configuration.engin['http_debug']
+    JiraServer::Issues.update_all
+  end
+
   # task jira_statistics: :environment do
   #   puts 'DEBUG: executing loader:jira_statistics task' if Rails.configuration.engin['http_debug']
   #   include ProjectReporting
