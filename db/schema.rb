@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_10_221543) do
+ActiveRecord::Schema.define(version: 2023_01_11_142311) do
 
   create_table "currencies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,22 @@ ActiveRecord::Schema.define(version: 2023_01_10_221543) do
     t.string "division"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "jira_issues", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "jira_project_id", null: false
+    t.integer "jira_issue_id"
+    t.string "issue_key"
+    t.text "issue_url"
+    t.text "issue_title"
+    t.string "issue_status"
+    t.string "issue_type"
+    t.integer "story_points"
+    t.datetime "issue_created"
+    t.datetime "issued_updated"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["jira_project_id"], name: "index_jira_issues_on_jira_project_id"
   end
 
   create_table "jira_projects", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -122,6 +138,7 @@ ActiveRecord::Schema.define(version: 2023_01_10_221543) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "jira_issues", "jira_projects"
   add_foreign_key "jira_projects", "projects"
   add_foreign_key "members", "departments"
   add_foreign_key "members", "roles"
