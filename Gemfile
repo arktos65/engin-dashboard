@@ -27,6 +27,8 @@ gem 'faraday-httpclient', '~> 2.0', '>= 2.0.1'
 gem 'faraday-retry'
 # Enables diagnostic logging of HTTP traffic
 gem 'http_logger', '~> 0.7.0'
+gem 'net-protocol', '~> 0.2.1'
+gem 'net-http'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
