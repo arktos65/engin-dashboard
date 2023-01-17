@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_11_142311) do
+ActiveRecord::Schema.define(version: 2023_01_12_203214) do
 
   create_table "currencies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -138,6 +138,22 @@ ActiveRecord::Schema.define(version: 2023_01_11_142311) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "teams", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "member_id", null: false
+    t.bigint "project_id", null: false
+    t.integer "annual_rate"
+    t.integer "weekly_rate"
+    t.bigint "currency_id", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "allocation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["currency_id"], name: "index_teams_on_currency_id"
+    t.index ["member_id"], name: "index_teams_on_member_id"
+    t.index ["project_id"], name: "index_teams_on_project_id"
+  end
+
   add_foreign_key "jira_issues", "jira_projects"
   add_foreign_key "jira_projects", "projects"
   add_foreign_key "members", "departments"
@@ -146,4 +162,7 @@ ActiveRecord::Schema.define(version: 2023_01_11_142311) do
   add_foreign_key "projects", "streams"
   add_foreign_key "resource_rates", "currencies"
   add_foreign_key "resource_rates", "members"
+  add_foreign_key "teams", "currencies"
+  add_foreign_key "teams", "members"
+  add_foreign_key "teams", "projects"
 end
