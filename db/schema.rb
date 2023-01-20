@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_12_203214) do
+ActiveRecord::Schema.define(version: 2023_01_20_150122) do
 
   create_table "currencies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -55,6 +55,17 @@ ActiveRecord::Schema.define(version: 2023_01_12_203214) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_jira_projects_on_project_id"
+  end
+
+  create_table "jira_users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "account_id"
+    t.string "display_name"
+    t.string "email_address"
+    t.boolean "is_active"
+    t.text "self_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_jira_users_on_account_id", unique: true
   end
 
   create_table "members", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
