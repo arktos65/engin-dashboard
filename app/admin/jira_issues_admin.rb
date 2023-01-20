@@ -1,6 +1,8 @@
 Trestle.resource(:jira_issues) do
   menu do
-    item :jira_issues, icon: "fa fa-star"
+    group :development_projects do
+      item :jira_issues, icon: "fa fa-star"
+    end
   end
 
   # Customize the table columns shown on the index view.

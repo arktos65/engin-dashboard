@@ -1,6 +1,8 @@
 Trestle.resource(:projects) do
   menu do
-    item :projects, icon: "fa fa-star"
+    group :development_projects do
+      item :projects, icon: "fa fa-star"
+    end
   end
 
   # Customize the table columns shown on the index view.
