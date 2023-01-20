@@ -1,6 +1,8 @@
 Trestle.resource(:resource_rates) do
   menu do
-    item :resource_rates, icon: "fa fa-star"
+    group :resources do
+      item :resource_rates, icon: "fa fa-star"
+    end
   end
 
   # Customize the table columns shown on the index view.
