@@ -1,6 +1,8 @@
 Trestle.resource(:sources) do
   menu do
-    item :sources, icon: "fa fa-star"
+    group :administrator, priority: :first do
+      item :sources, icon: "fa fa-star"
+    end
   end
 
   # Customize the table columns shown on the index view.

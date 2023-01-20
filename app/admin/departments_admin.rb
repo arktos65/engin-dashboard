@@ -1,6 +1,8 @@
 Trestle.resource(:departments) do
   menu do
-    item :departments, icon: "fa fa-star"
+    group :administrator, priority: :first do
+      item :departments, icon: "fa fa-star"
+    end
   end
 
   # Customize the table columns shown on the index view.

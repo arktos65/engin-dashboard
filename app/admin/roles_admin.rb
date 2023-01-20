@@ -1,6 +1,8 @@
 Trestle.resource(:roles) do
   menu do
-    item :roles, icon: "fa fa-star"
+    group :administrator, priority: :first do
+      item :roles, icon: "fa fa-star"
+    end
   end
 
   # Customize the table columns shown on the index view.
