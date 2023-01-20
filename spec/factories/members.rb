@@ -9,6 +9,6 @@ FactoryBot.define do
     end_date { "2023-01-06" }
     is_active { false }
     is_contractor { false }
-    jira_account_id { Faker::String.random }
+    association :jira_user
   end
 end

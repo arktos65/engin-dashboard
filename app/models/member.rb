@@ -3,6 +3,7 @@ class Member < ApplicationRecord
   belongs_to :role
   belongs_to :department
   belongs_to :source
+  belongs_to :jira_user
 
   has_many :resource_rates
 
