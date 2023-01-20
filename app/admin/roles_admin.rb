@@ -1,7 +1,7 @@
 Trestle.resource(:roles) do
   menu do
     group :administrator, priority: :first do
-      item :roles, icon: "fa fa-star"
+      item :roles, icon: "fa fa-square"
     end
   end
 

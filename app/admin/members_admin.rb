@@ -1,7 +1,7 @@
 Trestle.resource(:members) do
   menu do
     group :resources do
-      item :members, icon: "fa fa-star"
+      item :members, icon: "fa fa-user"
     end
   end
 

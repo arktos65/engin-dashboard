@@ -1,7 +1,7 @@
 Trestle.resource(:projects) do
   menu do
     group :development_projects do
-      item :projects, icon: "fa fa-star"
+      item :projects, icon: "fa fa-gears"
     end
   end
 

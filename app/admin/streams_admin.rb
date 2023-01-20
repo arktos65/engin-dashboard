@@ -1,7 +1,7 @@
 Trestle.resource(:streams) do
   menu do
     group :development_projects do
-      item :streams, icon: "fa fa-star"
+      item :streams, icon: "fa fa-folder"
     end
   end
 

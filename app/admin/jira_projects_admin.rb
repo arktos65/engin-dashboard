@@ -1,7 +1,7 @@
 Trestle.resource(:jira_projects) do
   menu do
     group :development_projects do
-      item :jira_projects, icon: "fa fa-star"
+      item :jira_projects, icon: "fa fa-tasks"
     end
   end
 

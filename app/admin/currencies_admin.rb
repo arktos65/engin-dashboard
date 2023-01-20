@@ -1,7 +1,7 @@
 Trestle.resource(:currencies) do
   menu do
     group :administrator, priority: :first do
-      item :currencies, icon: "fa fa-star"
+      item :currencies, icon: "fa fa-square"
     end
   end
 

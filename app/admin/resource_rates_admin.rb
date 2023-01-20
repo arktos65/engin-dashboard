@@ -1,7 +1,7 @@
 Trestle.resource(:resource_rates) do
   menu do
     group :resources do
-      item :resource_rates, icon: "fa fa-star"
+      item :resource_rates, icon: "fa fa-money"
     end
   end
 
