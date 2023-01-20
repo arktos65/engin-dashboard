@@ -1,6 +1,8 @@
 Trestle.resource(:currencies) do
   menu do
-    item :currencies, icon: "fa fa-star"
+    group :administrator, priority: :first do
+      item :currencies, icon: "fa fa-square"
+    end
   end
 
   # Customize the table columns shown on the index view.

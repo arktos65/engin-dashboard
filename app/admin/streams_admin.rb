@@ -1,6 +1,8 @@
 Trestle.resource(:streams) do
   menu do
-    item :streams, icon: "fa fa-star"
+    group :development_projects do
+      item :streams, icon: "fa fa-folder"
+    end
   end
 
   # Customize the table columns shown on the index view.

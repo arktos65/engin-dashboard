@@ -1,6 +1,8 @@
 Trestle.resource(:teams) do
   menu do
-    item :teams, icon: "fa fa-star"
+    group :resources do
+      item :teams, icon: "fa fa-users"
+    end
   end
 
   # Customize the table columns shown on the index view.
