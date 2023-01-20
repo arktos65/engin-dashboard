@@ -1,0 +1,16 @@
+---
+id: 1
+name: Company A
+contact_name: John Smith
+contact_title: VP Engineering
+contact_phone: 555-555-5555
+contact_email: john.smith@company.com
+is_internal: true
+---
+id: 2
+name: Company B
+contact_name: Jane Smith
+contact_title: Account Executive
+contact_phone: 555-555-5555
+contact_email: jane.smith@companyb.com
+is_internal: false

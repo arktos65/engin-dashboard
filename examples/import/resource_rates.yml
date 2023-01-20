@@ -1,0 +1,27 @@
+---
+id: 1
+member_id: 1
+currency_id: 1
+period_start: 1/1/2022
+period_end: 3/31/2022
+classification: 0
+base_rate: 45.00
+fiscal_year: 2022
+---
+id: 2
+member_id: 1
+currency_id: 1
+period_start: 4/1/2022
+period_end: 12/31/2022
+classification: 0
+base_rate: 48.60
+fiscal_year: 2022
+---
+id: 3
+member_id: 2
+currency_id: 1
+period_start: 1/1/2022
+period_end: 12/31/2022
+classification: 1
+base_rate: 65.00
+fiscal_year: 2022
