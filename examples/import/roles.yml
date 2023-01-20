@@ -1,0 +1,18 @@
+---
+id: 1
+name: Software Engineer
+is_shared: false
+is_administration: false
+department_id: 1
+---
+id: 2
+name: Sr Software Engineer
+is_shared: false
+is_administration: false
+department_id: 1
+---
+id: 3
+name: QA Engineer
+is_shared: true
+is_administration: false
+department_id: 2

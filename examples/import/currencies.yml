@@ -1,0 +1,15 @@
+---
+id: 1
+name: US Dollar
+code: USD
+exchange_rate: 1.0
+---
+id: 2
+name: Euro
+code: EUR
+exchange_rate: 1.10
+---
+id: 3
+name: British Pounds
+code: GBP
+exchange_rate: 1.15

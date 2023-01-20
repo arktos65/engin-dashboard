@@ -1,0 +1,18 @@
+---
+id: 1
+stream_id: 1
+name: Mobile App
+is_trackable: true
+is_internal: false
+start_date: 1/1/22
+end_date: nil
+is_active: true
+---
+id: 2
+stream_id: 2
+name: Support App
+is_trackable: true
+is_internal: true
+start_date: 1/1/22
+end_date: nil
+is_active: true

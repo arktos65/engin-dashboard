@@ -1,0 +1,12 @@
+---
+id: 1
+name: Program A
+business_unit: Marketing
+stakeholder_name: Jane Smith
+stakeholder_email: jane.smith@company.com
+---
+id: 2
+name: Program B
+business_unit: Engagement
+stakeholder_name: Jack Smith
+stakeholder_email: jack.smith@company.com
