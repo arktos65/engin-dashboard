@@ -14,6 +14,11 @@ namespace :loader do
     JiraServer::Issues.update_all
   end
 
+  task jira_users: :environment do
+    puts 'DEBUG: executing loader:jira_users task' if Rails.configuration.engin['http_debug']
+    JiraServer::Users.update_all
+  end
+
   # task jira_statistics: :environment do
   #   puts 'DEBUG: executing loader:jira_statistics task' if Rails.configuration.engin['http_debug']
   #   include ProjectReporting
@@ -32,5 +37,6 @@ namespace :loader do
     puts "- `$ rails loader:jira_projects` -- Performs an upsert of Jira projects to EngIn database."
     puts "- `$ rails loader:jira_issues` -- Performs an upsert of Jira issues to EngIn database."
     puts "- `$ rails loader:jira_statistics` -- Process weekly Jira data and generate statistics for reporting."
+    puts "- `$ rails loader:jira_users` -- Performs an upsert of Jira users to EngIn database."
   end
 end
