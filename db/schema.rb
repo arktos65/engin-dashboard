@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_20_162653) do
+ActiveRecord::Schema.define(version: 2023_01_23_205556) do
 
   create_table "currencies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -85,6 +85,37 @@ ActiveRecord::Schema.define(version: 2023_01_20_162653) do
     t.index ["jira_user_id"], name: "index_members_on_jira_user_id"
     t.index ["role_id"], name: "index_members_on_role_id"
     t.index ["source_id"], name: "index_members_on_source_id"
+  end
+
+  create_table "project_statistics", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.string "project_name"
+    t.integer "stream_id"
+    t.string "stream_name"
+    t.integer "week_number"
+    t.integer "month_number"
+    t.integer "year_number"
+    t.integer "bug_count"
+    t.integer "story_count"
+    t.integer "task_count"
+    t.integer "team_count"
+    t.integer "open_bugs"
+    t.integer "open_stories"
+    t.integer "open_tasks"
+    t.integer "closed_bugs"
+    t.integer "closed_stories"
+    t.integer "closed_tasks"
+    t.integer "dropped_bugs"
+    t.integer "dropped_stories"
+    t.integer "dropped_tasks"
+    t.integer "capex_points"
+    t.integer "opex_points"
+    t.decimal "weekly_team_cost", precision: 10
+    t.decimal "weekly_capex", precision: 10
+    t.decimal "weekly_opex", precision: 10
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_project_statistics_on_project_id"
   end
 
   create_table "projects", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -171,6 +202,7 @@ ActiveRecord::Schema.define(version: 2023_01_20_162653) do
   add_foreign_key "members", "jira_users"
   add_foreign_key "members", "roles"
   add_foreign_key "members", "sources"
+  add_foreign_key "project_statistics", "projects"
   add_foreign_key "projects", "streams"
   add_foreign_key "resource_rates", "currencies"
   add_foreign_key "resource_rates", "members"
