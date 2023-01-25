@@ -60,6 +60,8 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 5.1'
   # Database seeding tool
   gem 'yaml_db', '~> 0.7.0'
+  # Background processing automation
+  gem 'sidekiq', '~> 7.0', '>= 7.0.3'
 end
 
 group :development do
