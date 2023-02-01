@@ -1,0 +1,41 @@
+version: '3'
+volumes:
+  engin-data:
+services:
+  # EngIn App database server
+  engin-db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    volumes:
+      # Use this option to persist the MySQL DBs in a shared volume.
+      #- ./mysqldata:/var/lib/mysql:rw,delegated
+      # Use this option to persist the MySQL DBs in a data volume.
+      - engin-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "Ebtylor1871!"
+      MYSQL_ROOT_HOST: "%"
+    restart:  always
+  # EngIn application server
+  engin-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tgwconsulting/engin-dash:latest
+    entrypoint: ["/opt/engin_app/app/lib/docker-entrypoint.sh"]
+    command: ["rails","server","-b","0.0.0.0","-p","3000"]
+    ports:
+      - "3000:3000"
+    deploy:
+      replicas: 1
+    links:
+      - engin-db
+      - engin-cache
+    environment:
+      RAILS_ENV: development
+    restart:  always
+  # EngIn job cache
+  engin-cache:
+    image: redis:7.0
+    ports:
+      - "6379:6379"
