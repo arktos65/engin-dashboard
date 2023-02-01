@@ -63,6 +63,8 @@ group :development, :test do
   # Background processing automation
   gem 'sidekiq', '~> 7.0', '>= 7.0.3'
   gem 'sidekiq-cron', '~> 1.9', '>= 1.9.1'
+  # Redis library
+  gem 'redis', '~> 5.0', '>= 5.0.6'
 end
 
 group :development do

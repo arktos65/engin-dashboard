@@ -18,6 +18,7 @@ The available environment variables are thus:
 | PRODUCTBOARD_API_URL | https://api.productboard.com/ | URL of ProductBoard API.                                |
 | ENGIN_REDIS_SERVER   | localhost                     | Host name of the Redis server instance for EnginApp.    |
 | ENGIN_REDIS_PORT     | 6379                          | TCP port number of Redis data store on server.          |
+| ENGIN_REDIS_DB       | 0                             | Database number of your Redis instance.                 |
 | MYSQL_DB_USER        | dbuser                        | MySQL database user name for application.               |
 | MYSQL_DB_PASS        | password string               | MySQL database user password.                           |
 
