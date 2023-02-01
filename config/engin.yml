@@ -4,6 +4,7 @@ default: &default
   http_debug: false
   redis_server: <%= ENV.fetch("ENGIN_REDIS_SERVER") { 'localhost' } %>
   redis_port: <%= ENV.fetch("ENGIN_REDIS_PORT") { 6379 } %>
+  redis_db: <%= ENV.fetch("ENGIN_REDIS_DB") { 0 } %>
 
 development:
   <<: *default
