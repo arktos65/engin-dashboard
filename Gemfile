@@ -62,6 +62,7 @@ group :development, :test do
   gem 'yaml_db', '~> 0.7.0'
   # Background processing automation
   gem 'sidekiq', '~> 7.0', '>= 7.0.3'
+  gem 'sidekiq-cron', '~> 1.9', '>= 1.9.1'
 end
 
 group :development do
