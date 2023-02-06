@@ -26,6 +26,7 @@ default: &default
   max_results: 50
   fields:
     story_points: "customfield_10103"
+    is_capex: ""
 
 development:
   <<: *default

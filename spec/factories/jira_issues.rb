@@ -10,5 +10,6 @@ FactoryBot.define do
     story_points { 1 }
     issue_created { Faker::Date.backward(days: 7) }
     issued_updated { Faker::Date.backward(days: 3) }
+    is_capex { true }
   end
 end
