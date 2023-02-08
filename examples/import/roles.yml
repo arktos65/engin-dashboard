@@ -16,3 +16,9 @@ name: QA Engineer
 is_shared: true
 is_administration: false
 department_id: 2
+---
+id: 4
+name: SRE
+is_shared: true
+is_administration: false
+department_id: 3

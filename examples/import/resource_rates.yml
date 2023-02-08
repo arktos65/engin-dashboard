@@ -25,3 +25,12 @@ period_end: 12/31/2022
 classification: 1
 base_rate: 65.00
 fiscal_year: 2022
+---
+id: 4
+member_id: 3
+currency_id: 2
+period_start: 1/1/2023
+period_end: 12/31/2023
+classification: 1
+base_rate: 65.00
+fiscal_year: 2023

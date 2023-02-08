@@ -16,3 +16,12 @@ is_internal: true
 start_date: 1/1/22
 end_date: nil
 is_active: true
+---
+id: 3
+stream_id: 2
+name: Web App
+is_trackable: true
+is_internal: false
+start_date: 1/1/23
+end_date: nil
+is_active: true

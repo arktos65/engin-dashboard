@@ -20,3 +20,14 @@ start_date: 6/1/2021
 end_date: nil
 is_active: true
 is_contractor: false
+---
+id: 2
+first_name: Peter
+last_name: Gabriel
+role_id: 4
+department_id: 3
+source_id: 1
+start_date: 6/1/2021
+end_date: nil
+is_active: true
+is_contractor: true
