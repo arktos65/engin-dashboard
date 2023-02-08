@@ -106,38 +106,7 @@ You should see some messages starting with:
     Username: admin@example.com
     Password: password123
 
-This means your database environment has been successfully initialized.
-
-### Manually Loading Jira Data
-
-In your development database, you may manually load or update data from Jira with your database.  From the
-project root directory of the engin-dash code base:
-
-    $ rvm use
-    $ rails loader:jira_projects
-    2022-08-02 - 10:51:50.050:   Connecting to Jira instance
-    2022-08-02 - 10:51:50.050:   Fetching all projects from Jira
-    2022-08-02 - 10:51:50.635:   Upserting Jira projects to EngIn database
-
-    $ rails loader:jira_issues
-    2022-08-02 - 10:53:16.605:   Connecting to Jira instance
-    2022-08-02 - 10:53:16.605:   Fetching all projects from Jira
-
-### Clearing Database Tables
-
-If you need to clear database tables, you can do so with some provided rake tasks.  From the project
-root directory of the engin-dash code base:
-
-    $ rvm use
-    $ rails utility:clear_jira_issues
-    2022-08-02 - 10:59:16.126:   Clearing Jira Issues database table
-    2022-08-02 - 10:59:16.253:   Task complete
-    
-    $ rails utility:clear_jira_projects
-    2022-08-02 - 10:59:55.695:   Clearing Jira Projects database table
-    2022-08-02 - 10:59:55.817:   Task complete
-
-If you're clearing out the Jira data, perform these operations in the order as illustrated above.
+This means your database environment has been successfully initialized.  For loading Jira data see [this document](LOADER.md).
 
 ### Setting Up Redis Server
 
